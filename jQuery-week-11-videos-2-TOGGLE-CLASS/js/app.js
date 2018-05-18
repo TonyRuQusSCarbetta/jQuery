@@ -1,68 +1,75 @@
-// jQuery basic syntax
-// 1. Target/what are we selectiong?
-//2. Method()/what are we doing?
-//3.Anonymous Iife inside the method
-//example:
-$(document).ready(function() {
+//jQuery Show,Hide,Toggle
 
-  function() {
-    //do stuff
-  }
-  //or another example:
-  $("div").hide();
+// .show()
 
+//Psuedocode:
+//when i click the show button, hide the image
+$("button#hide").click(function() {
+  $("img").hide();
 });
 
-//-----------------------------------------------------------------------------
+// .hide()
 
-//SELECTOR TYPES
-
-//Element Selector
-$("button");
-//Class Selector
-$("box");
-// Id Selector
-$("#myId");
-
-//CSS Selectors work EXACTLY the same way/we can be as specific as we want when selecting elements
-// $(div .btn, span);
-
-// this keyword Selector
-$(this);
-
-// we can store selectors in variable
-var box = $("box");
-
-//-----------------------------------------------------------------------------
-
-//Using jQuery perform this psuedo code:
-//when i click on Any element with a class "box", do stuff.
-$("box").click(function() {
-  //does stuff
+//Psuedocode:
+//when i click the hide button, show the image
+$("button#show").click(function () {
+  $("img").show();
 });
 
-//Using Vanilla JavaScript do the same thing:
-//when i click on Any element with a class "box", do stuff.
-var boxes = document.getElementsByClassName("box");
-for (var i = 0; i < boxes.length; i++) {
-  boxes[i].addEventListener("click", function () {
-    //does stuff
-  })
-}
+// .toggle()
+
+//Psuedocode:
+//when i click the toggle button, hide or show  the image depending on it's display
+$("#toggleImg").click(function () {
+  $("img").toggle();
+});
+
+//(if the display for the element is already listed as hidden in the css, we can use jQuery show method and it changes the display to block, as a INLINE STYLE!!! Remember this can cause problems and make it behave differently.)
+//-----------------------------------------------------------------------------
+
+// .toggleClass
+
+$("h1").click(function () {
+  $("body").toggleClass("bg-danger text-light");
+  $("h1").toggleClass("animated rotateOut");
+  $("button").toggleClass("bg-light border")
+});
+
+//to switch between two styles (turn one off and another on), set the class name already in the html and put it in the toggle class method as well
+
 
 //-----------------------------------------------------------------------------
 
-//lets break this code down...
-var boxes = document.getElementsByClassName("box");
-// the variable boxes returns ALL classes named box in an array, which looks like this,
-// [div.box, div.box, div.box]
-//However, the PROBLEM is,... in Vanilla JS we cannot add an event listener for a click event on an array, because an array is not the appropriate data type.
 
-//Therefore, we must loop through the array and add a click event listener to each item/box in the array
-for (var i = 0; i < boxes.length; i++) {
-  boxes[i].addEventListener("click", function () {
-    //does stuff
-  })
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //-----------------------------------------------------------------------------

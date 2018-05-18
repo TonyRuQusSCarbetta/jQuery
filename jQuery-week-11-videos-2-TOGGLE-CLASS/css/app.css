@@ -9,8 +9,7 @@ html, body {
   height: 100%;
 }
 
-.box {
-  height: 200px;
-  width: 200px;
-  background-color: red;
+img {
+  max-height: 300px;
+  max-width: 200px;
 }
